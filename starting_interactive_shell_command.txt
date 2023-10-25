@@ -1,0 +1,8 @@
+# **********
+# Update the user field to your chosen user name.
+#
+# Example:
+#   docker exec --user cheelee -it bioinformatics bash
+#
+#
+docker exec --user default_user -it bioinformatics bash
