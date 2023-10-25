@@ -20,7 +20,7 @@ RUN apt-get update && \
 RUN apt-get update && apt-get install -y --no-install-recommends \
   python3-dev python3-pip git wget seqtk ncbi-blast+ \
   emboss diamond-aligner samtools minimap2 vim-tiny tree \
-  make fastqc multiqc bwa bowtie2
+  make fastqc multiqc bwa bowtie2 tabix vcftools mafft raxml
 
 # Set local timezone so the timestamps are consistent with when the analysis is run.
 RUN echo "tzdata tzdata/Areas select ${LOC_AREA}" | debconf-set-selections && \
@@ -49,10 +49,11 @@ RUN chown $USER:$USER -R $HOME/data
 USER $USER
 
 # Install the NCBI Entrez Utilities (support for efetch)
-RUN wget -q https://ftp.ncbi.nih.gov/entrez/entrezdirect/install-edirect.sh
-RUN chmod 755 install-edirect.sh && \
-  ./install-edirect.sh <<< "y\n"
-RUN rm ./install-edirect.sh
+#   Has problems with Ubuntu 22.04 on Apple Silicon
+#RUN wget -q https://ftp.ncbi.nih.gov/entrez/entrezdirect/install-edirect.sh
+#RUN chmod 755 install-edirect.sh && \
+#  ./install-edirect.sh <<< "y\n"
+#RUN rm ./install-edirect.sh
 
 # Set up user's essential file structure and code base for the tool.
 RUN mkdir -p $HOME/.local/share
