@@ -20,8 +20,7 @@ RUN apt-get update && \
 RUN apt-get update && apt-get install -y --no-install-recommends \
   python3-dev python3-pip git wget seqtk ncbi-blast+ \
   emboss diamond-aligner samtools minimap2 vim-tiny tree \
-  make fastqc multiqc bioperl gzip unzip \
-  libjson-perl libtext-csv-perl libpath-tiny-perl liblwp-protocol-https-perl libwww-perl 
+  make fastqc multiqc bwa bowtie2 \
 
 # Set local timezone so the timestamps are consistent with when the analysis is run.
 RUN echo "tzdata tzdata/Areas select ${LOC_AREA}" | debconf-set-selections && \
@@ -48,12 +47,6 @@ RUN chown $USER:$USER -R $HOME/data
 
 # Become the user
 USER $USER
-
-# Install abricate AMR detection tool
-RUN git clone https://github.com/tseemann/abricate.git && \
-  ./abricate/bin/abricate --check && \
-  ./abricate/bin/abricate --setupdb && \
-  ./abricate/bin/abricate ./abricate/test/assembly.fa
 
 # Install the NCBI Entrez Utilities (support for efetch)
 RUN wget -q https://ftp.ncbi.nih.gov/entrez/entrezdirect/install-edirect.sh
