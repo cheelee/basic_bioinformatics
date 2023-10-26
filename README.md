@@ -1,5 +1,7 @@
 # Basic Bioinformatics Docker Package
 A docker package that provides basic bioinformatics tools in an Ubuntu Linux environment.
+To download and install Docker, please visit their website - 
+https://docs.docker.com/get-docker/
 
 This is intended to be a starting point for a potentially shareable common Linux environment
 where basic bioinformatics analysis tasks may be performed on small or medium sized examples
