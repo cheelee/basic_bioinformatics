@@ -110,6 +110,6 @@ of this package.
 - Mapping of sequenced reads to reference sequences - `minimap2`.
 - Review of reads-to-reference coverage and depth information - `samtools`.
 - Multiple alignment of sequences of similar length - `mafft`.
-- Phylogenetic tree building - `raxml`.
+- Phylogenetic tree building - `raxmlHPC`.
 - Automation - `python3`. No guide is provided here. Seek tutorials on python online as the
 use cases are very varied.
