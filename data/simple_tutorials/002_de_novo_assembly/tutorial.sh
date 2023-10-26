@@ -16,7 +16,7 @@ ln -s ~/data/examples/sars_cov2_ncbi_sra_reads/SRR26474585.fastq.gz
 # The assembled contigs are written as sars_trinity_assembly.Trinity.fasta.
 #
 # Keep the assembled contigs for other tutorial guides.
-Trinity --seqType fq --max_memory 4G --single ~/external_share_in/SRR26474585.fastq.gz --run_as_paired --output sars_trinity_assembly
+Trinity --seqType fq --max_memory 4G --single SRR26474585.fastq.gz --run_as_paired --output sars_trinity_assembly
 
 # Inspect the contigs assembled using seqtk
 #
