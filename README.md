@@ -1,5 +1,6 @@
 # Basic Bioinformatics Docker Package
-A docker package that provides basic bioinformatics tools in an Ubuntu Linux environment.
+A docker package that provides basic bioinformatics tools in an Ubuntu Linux environment
+that can be used on any other OS that supports Docker (specifically Mac OS and Windows).
 To download and install Docker, please visit their website - 
 https://docs.docker.com/get-docker/
 
@@ -9,7 +10,9 @@ or data sets. It was initially created for attendees of a workshop for bioinform
 may be generally useful for others wanting a Linux environment to work with from other
 operating systems and platforms.
 
-## Getting the Package (One-Time Only)
+# Getting Started
+
+## Downloading this Package (One-Time Only)
 
 From a suitable folder on your Host Machine, run 
 
@@ -40,7 +43,7 @@ it in the previous step.
 5. Build the Docker image - Double-click on `windows_build_image.bat`.
 6. Initialize the Docker container - Double-click on `windows_init_container.bat`.
 
-## Using the Package
+## Starting the Bioinformatics Image Environment
 
 ### MacOS
 
@@ -58,6 +61,15 @@ Run `docker exec --user default_user -it bioinformatics bash`
 3. Double-click on `windows_start_terminal.bat`. This will open a new terminal window, and
 it will be inside the Ubuntu image.
 
+# Usage
+
+## Tutorials
+
+Simple tutorials are provided covering various stages of simple bioinformatics. Each tutorial
+is captured in the subfolders of `~/data/simple_tutorials` as the file `tutorial.sh`. You can
+use the command `cat tutorial.sh` to view each of them. The tutorials use data from publicly
+available AMR tools, and NCBI Sars-Cov2 reads and reference sequences.
+
 ## Sharing Data between the Ubuntu Docker image and Host Machine.
 
 This applies to both MacOS and Windows. In the package are two folders `share_in` and 
@@ -74,9 +86,17 @@ The Ubuntu image will have access to the Internet in the same way your Host Mach
 may run tools and software like git, and wget from inside the image to access the internet
 environment like NCBI and Github.
 
-## Tools and Bioinformatics topics and concepts supported.
+## Custom Personal Bioinformatics Workflows
 
-### Basic Linux operations and tools.
+You are free to use this package any way you see fit. You can copy your own sequence data into
+the `share_in` folder (it is read-only, so nothing the image does will damage that data). You 
+can also generate analysis results via the tools installed, and place it into the `share_out`
+for downstream GUI tools like Geneious. You can even choose to install or develop your own 
+tools and Linux packages into your own images if you understand how to do so.
+
+# Tools, Bioinformatics topics, and concepts supported.
+
+## Basic Linux operations and tools.
 
 It is beyond the scope of this package to cover all of standard Linux use. Please consult
 other tutorials and guides. The following are general categories of tasks that are
@@ -90,7 +110,7 @@ supported in this package.
 - Content manipulation and data extraction - `cut`, `tr`, `sort`, `uniq`.
 - Working with shared repositories - `git`.
 
-### Common bioinformatics workflows.
+## Common bioinformatics workflows.
 
 - Review and manipulation of sequence data files (fasta, fastq) - `seqtk`.
 - Downloading data (reference sequences, genbank, etc) - `efetch`. Unfortunately there are 
@@ -100,7 +120,7 @@ here.
 - Simple taxonomic identification of reads - `kraken2`. No support for kraken2 is provided
 here because of the large sizes of databases required to allow it to work well.
 - De novo assembly of raw sequenced reads into contigs - `Trinity`.
-- Review the quality of assemblies - `Quast`. No support for Quast is provided in this
+- Review the quality of assemblies - `Quast`. No support for `Quast` is provided in this
 package.
 - Reference-based assembly and consensus of raw sequenced reads - multiple steps involving
 tools like bwa for Illumina reads, or minimap2 for Oxford nanpore reads. Beyond the scope
@@ -117,9 +137,3 @@ of this package.
 use cases are very varied.
 - Variant Calling/Analysis - `vcftools`,`bcftools`,`vt`. `vt` is not provided in this package
 but is currently available on Github at `https://github.com/atks/vt` 
-
-## Tutorials
-
-Simple tutorials are provided covering various stages of simple bioinformatics. Each tutorial
-is captured in the subfolders of `~/data/simple_tutorials` as the file `tutorial.sh`. You can
-use the command `cat tutorial.sh` to view each of them.
