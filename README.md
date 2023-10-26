@@ -9,8 +9,9 @@ operating systems and platforms.
 
 ## Getting the Package (One-Time Only)
 
-From a suitable folder on your Host Machine, 
-run `git clone https://github.com/cheelee/basic_bioinformatics.git`
+From a suitable folder on your Host Machine, run 
+
+`git clone https://github.com/cheelee/basic_bioinformatics.git`
 
 ## Initialize the Package (One-Time Only)
 
