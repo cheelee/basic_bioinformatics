@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   python3-dev python3-pip git wget seqtk ncbi-blast+ \
   emboss diamond-aligner samtools minimap2 vim-tiny tree \
   make fastqc multiqc bwa bowtie2 tabix vcftools mafft raxml \
-  bsdmainutils less
+  bsdmainutils less trinityrnaseq
 
 # Set local timezone so the timestamps are consistent with when the analysis is run.
 RUN echo "tzdata tzdata/Areas select ${LOC_AREA}" | debconf-set-selections && \
