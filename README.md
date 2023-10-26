@@ -113,3 +113,5 @@ of this package.
 - Phylogenetic tree building - `raxmlHPC`.
 - Automation - `python3`. No guide is provided here. Seek tutorials on python online as the
 use cases are very varied.
+- Variant Calling/Analysis - `vcftools`,`bcftools`,`vt`. `vt` is not provided in this package
+but is currently available on Github at `https://github.com/atks/vt` 
