@@ -41,3 +41,8 @@ water interesting_contig.fasta ~/data/references/sars_cov2_ncbi_refseq_NC_045512
 # Hit enter three times. This may take a while to complete.
 # Now you can view the local alignment output.
 head -50 trinity_dn7_c0_g1_i1.water
+
+# A Note - You may happen to choose a contig that appears to have a rather terrible
+#  local alignment match with the reference, with many regularly interspersed gaps.
+#  That may turn out to be the result of the contig being a reverse-complement sequence
+#  relative to the reference. Learn how to fix this in tutorial 003_local_alignment.
