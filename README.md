@@ -115,3 +115,9 @@ of this package.
 use cases are very varied.
 - Variant Calling/Analysis - `vcftools`,`bcftools`,`vt`. `vt` is not provided in this package
 but is currently available on Github at `https://github.com/atks/vt` 
+
+## Tutorials
+
+Simple tutorials are provided covering various stages of simple bioinformatics. Each tutorial
+is captured in the subfolders of `~/data/simple_tutorials` as the file `tutorial.sh`. You can
+use the command `cat tutorial.sh` to view each of them.
